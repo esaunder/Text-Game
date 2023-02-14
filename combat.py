@@ -11,32 +11,32 @@
 
 import random, winsound, time; #importing important resources for the battle system and for music
 def battle(HP, h, l, s, g, d, spa, spd, edam, edef, MP, mpd, m, mtype, fire, ice, earth, lightning, music, art): #Creating the battle func with all the variables needed listed
-    if music is "B1":   #coding the music for the battle sequence, calling on the str given in brackets
-        winsound.PlaySound("c", winsound.SND_ASYNC + winsound.SND_LOOP) 
-    elif music is "B2":
-        winsound.PlaySound("GBB3", winsound.SND_ASYNC + winsound.SND_LOOP)
-    elif music is "B3":
-        winsound.PlaySound("f", winsound.SND_ASYNC + winsound.SND_LOOP)
-    elif music is "B4":
-        winsound.PlaySound("GBB1", winsound.SND_ASYNC + winsound.SND_LOOP)
-    elif music is "B5":
-        winsound.PlaySound("GBB2", winsound.SND_ASYNC + winsound.SND_LOOP) #Using ASYNC and LOOP to endlessly play sound in the background
-    elif music is "B6":
-        winsound.PlaySound("GBB4", winsound.SND_ASYNC + winsound.SND_LOOP)
-    elif music is "0":
-        winsound.PlaySound("boi", winsound.SND_ASYNC + winsound.SND_LOOP)
+    if music == "B1":   #coding the music for the battle sequence, calling on the str given in brackets
+        winsound.PlaySound("Music/c", winsound.SND_ASYNC + winsound.SND_LOOP)
+    elif music == "B2":
+        winsound.PlaySound("Music/GBB3", winsound.SND_ASYNC + winsound.SND_LOOP)
+    elif music == "B3":
+        winsound.PlaySound("Music/f", winsound.SND_ASYNC + winsound.SND_LOOP)
+    elif music == "B4":
+        winsound.PlaySound("Music/GBB1", winsound.SND_ASYNC + winsound.SND_LOOP)
+    elif music == "B5":
+        winsound.PlaySound("Music/GBB2", winsound.SND_ASYNC + winsound.SND_LOOP) #Using ASYNC and LOOP to endlessly play sound in the background
+    elif music == "B6":
+        winsound.PlaySound("Music/GBB4", winsound.SND_ASYNC + winsound.SND_LOOP)
+    elif music == "0":
+        winsound.PlaySound("Music/boi", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "1":
-        winsound.PlaySound("d", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/d", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "2":
-        winsound.PlaySound("g", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/g", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "3":
-        winsound.PlaySound("h", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/h", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "4":
-        winsound.PlaySound("i", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/i", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "5":
-        winsound.PlaySound("GB1", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/GB1", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "6":
-        winsound.PlaySound("e", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/e", winsound.SND_ASYNC + winsound.SND_LOOP)
     if art == "1":  #enemy ascii art dictated by the number assigned to art in the brackets
         monster =r'''
                          \                  /
@@ -1482,7 +1482,7 @@ def battle(HP, h, l, s, g, d, spa, spd, edam, edef, MP, mpd, m, mtype, fire, ice
                 break
     if W == 1: #If the variable is 1 then that means the enemy's HP was reduced to 0
         print ("You won the battle.")
-        winsound.PlaySound("victory", winsound.SND_ASYNC + winsound.SND_LOOP) #Victory sound
+        winsound.PlaySound("Music/victory", winsound.SND_ASYNC + winsound.SND_LOOP) #Victory sound
         while True:
             end = input("<Enter to exit> ") #Giving the player the option to choose when to exit
             if len(end) >= 0:
@@ -1496,7 +1496,7 @@ def battle(HP, h, l, s, g, d, spa, spd, edam, edef, MP, mpd, m, mtype, fire, ice
 def shop(): #Creating the shop function
     print ("OPENING SHOP...\n\n")
     print ("Type out the full name of the item you want to buy.")
-    winsound.PlaySound("shop", winsound.SND_ASYNC + winsound.SND_LOOP) 
+    winsound.PlaySound("Music/shop", winsound.SND_ASYNC + winsound.SND_LOOP)
     global sbuff, mbuff, abuff, hlv, mlv, slv, dbuff, hbuff, mpot, hpot, spot, lv, gold, dlv, alv #Getting global variables needed in the shop function
     while True:
         print (r'''
@@ -1661,7 +1661,7 @@ def shop(): #Creating the shop function
 def town(a): #creating a function for the town in the game
     global lv, gold, xp, lvup, hpot, hpots, spot, spots, mpot, mpots #obtaining important variables needed for the function from the global pool
     while True: #Looping endlessly until the player chooses to continue the story
-        b = "town" + a #Determening which town music to play with info from brackets
+        b = "Music/town" + a #Determening which town music to play with info from brackets
         winsound.PlaySound(b, winsound.SND_ASYNC + winsound.SND_LOOP) #Playing town music
         ton = input("Do you want to enter the 'shop', 'train' outside the town, or 'continue' to the guild? ") #Prompting user about what they want to do
         if ton == "shop":
@@ -2086,7 +2086,7 @@ ___________              __           __________                          .___ _
 name = input("What is your name saucy fellow? ")
 while True: #repitition loop to make sure the game doesn't break if the user doesn't input a valid part of the game
     if part == "1":
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("Hello adventurer! Welcome to the fair land of Verona, where we set our scene. I hear you just arrived here in Verona the other day.")
         print (name + ", as an adventurer, you will be given assignments by the guild and as you complete them you will get gold, items and will level up.")
         print ("Here are three charms. They don't do anything right now but if you upgrade them later, they will augment your abilities.")
@@ -2115,7 +2115,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     break
                 fails += 1
                 print ("\nRESTARTING BATTLE SEQUENCE.")
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("Nice work! Don't worry if you ever die because you can simply return to the beginning of the mission and restart with no consequences.")
         print ("Looks like there are two more coming! Defeat them and your mission is complete.")
         begin = input("Begin the Battle? ")
@@ -2142,7 +2142,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     fails += 1
                     print ("\nRESTARTING BATTLE SEQUENCE.")
 
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print (wins)
         print ("Wow, you're really something else! Here's your reward.")
         print ("You recieved 50 gold.")
@@ -2191,13 +2191,13 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                      mpot += mpots
                      break
                  fails += 2
-        winsound.PlaySound("town", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("*The villagers return to the village now that it is safe and they thank you kindly, giving you 3 health potions and 2 special potions.")
         hpot += 3
         spot += 2
         print("*You head to downtown Verona and explore the town.")
         town("") #activating the town function so the user can upgrade their gear or train if they want to
-        winsound.PlaySound("town", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("\n*You head into the guild branch afterwards to get your next assignment.")
         print ("Howdy partner! I'm Mercutio, the leader of the guild. I can tell that you're new here. There's only two things you need to know about working at the guild.")
         print ("Firstly, you go to the front desk to get your next assignments. The receptionist dictates who does which job depending on your abilities.")
@@ -2251,7 +2251,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                      break
                  fails += 1
         surprise = False 
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("*You continue your rounds and you find a group of bandits gathered together around someone.")
         begin = input("Are you ready to fight? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP) #Playing no sound here to speed up the switch between two audio tracks
@@ -2282,10 +2282,10 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                  if V is False and wins == 1 or V is False and wins == 2:
                      wins -= wins
                  fails += 1
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("*Having defeated the bandits, you return to downtown Verona.")
         town("")
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("*Back at the guild, you are given an urgent mission; to defend the town.")
         print("*You head to the city gates where you meet the city guard.")
         print("Ho! Adventurer, thanks for your help! Our scouts got word of a hord of bunnies heading towards the city. They're a force to be reckoned with.")
@@ -2319,7 +2319,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                  if V is False and wins > 0:
                      wins -= wins
                  fails += 1
-        winsound.PlaySound("boss1", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/boss1", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("*The second wave approaches and you see the legendary rabbit Big Chungus in the hoard.")
         begin = input("Big Chungus is known for his high defense due to his rolls of fat. Are you ready to battle him? ")
         wins = 0
@@ -2350,7 +2350,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                  elif V is False and wins == 1:
                      wins -= wins
                  fails += 1
-        winsound.PlaySound("boss1", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/boss1", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("Big Chungus' immense power easily beat you down but before he could finish you, a massive fireball slammed into Big Chungus.")
         print ("You are suddenly healed and look behind you to see several mages collapse from exhaustion from using such a powerful spell and from healing you.")
         begin = input("Challenge the weakened Big Chungus? ")
@@ -2382,7 +2382,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     mpot += mpots
                     break
                 fails += 1
-        winsound.PlaySound("town", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("*After catching your breath, you head back to the guild a hero, having slain a legendary creature.")
         print ("You recieve 500 gold for your victory.")
         gold += 500
@@ -2392,7 +2392,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
         mag = True #Making mag True allows the player to now use magic attacks in battle
         print ("*The next day you grab a new assignment from the guild.")
         print ("*Your assignment is to destroy a large boulder that fell onto an important mountain road.")
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You head out at once to break it.")
         print ("You find a massive rock on the road and aren't sure if you can break it.")
         begin = input("Start to break the rock? ")
@@ -2417,11 +2417,11 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     mpot += mpots
                     break
         print ("With the rock broken and you having discovered your new magic abilities, you head back to town.")
-        winsound.PlaySound("town", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("You recieve 800 gold for your trouble.")
         gold += 800
         town("")
-        winsound.PlaySound("town", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town", winsound.SND_ASYNC + winsound.SND_LOOP)
         part = "1.5"
     if part == "1.5":
         if lv == 1: #if the player is level 1, meaning they skipped to this part, they will get gold, a level boost, and LBP so they can actually survive. Mag is also made True
@@ -2459,7 +2459,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     wins -= wins
                     fails += 1
 
-        winsound.PlaySound("Light", winsound.SND_ASYNC + winsound.SND_LOOP) #Playing sound from the same folder as this document
+        winsound.PlaySound("Music/Light", winsound.SND_ASYNC + winsound.SND_LOOP) #Playing sound from the same folder as this document
         print ("You continue your patrol and find another pack of Defaults, this one being led by Jonsey, the king of defaults.")
         wins = 0
         fails = 0
@@ -2491,11 +2491,11 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     wins -= wins
                     fails += 1
         
-        winsound.PlaySound("town3", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town3", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("You head back to the guild and recieve 400 gold for supressing the Defaults.")
         gold += 400
         town("3")
-        winsound.PlaySound("town3", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town3", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("*The guild gives you an assignment to investigate the nearby town of Moscow.")
         print("People have been going missing and then reappearing several days later perfectly fine. When questioned about what happened to them, they apparently can't remember.")
         print("*You head out of Verona, towards Moscow.")
@@ -2528,7 +2528,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                         wins -= wins
                         fails += 1
         print("You arrive in Moscow and question the townsfolk about the incidents.")
-        winsound.PlaySound("town3", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town3", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You find out that the incidents tended to take place near the river just outside of town.")
         begin = input("Head to the path along the river? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP)
@@ -2559,7 +2559,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                         elif V is False and wins >= 0:
                             wins -= wins
                             fails += 1
-        winsound.PlaySound("FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("After walking along the river for a while, you hear a scream up ahead.")
         print ("You run along the river to see what the noise was and find a group of travelers being attacked by hippos.")
         print("You feel a powerful presence among them and realize that the legendary beast, Moto moto, is leading the hippos.")
@@ -2599,7 +2599,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                 elif V is False and wins >= 0:
                     wins -= wins
                     fails += 1
-        winsound.PlaySound("town3", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town3", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("The travelers give you some potions for saving them.")
         hpot += 2
         mpot += 1
@@ -2638,7 +2638,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                         fails += 1
         print("*You arrive back home in Verona safely.")
         town("3")
-        winsound.PlaySound("truth", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/truth", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You head to the guild and notice that there is a crowd outside.")
         print("You ask someone what's happening and you're told that some criminals, wielding powerful gun-like weapons has taken everyone in the guild building hostage.")
         print("You vaguely remember there being a secret entrance to the guild building from the shop.")
@@ -2671,7 +2671,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     elif V is False and wins >= 0:
                         wins -= wins
                         fails += 1
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You enter the guild and are in the basement.")
         begin = input("Search for the leaders of the heist? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP)
@@ -2700,7 +2700,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                         elif V is False and wins >= 0:
                             wins -= wins
                             fails += 1
-        winsound.PlaySound("truth", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/truth", winsound.SND_ASYNC + winsound.SND_LOOP)
         print ("You reach the lobby and find the guild workers all tied up in there, being guarded by several soldiers.")
         print("You backtrack and head to the guild leader's room.")
         begin = input("Enter the guild leader's room? ")
@@ -2738,7 +2738,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                     fails += 1
         print("You manage to weaken the leaders and the guild leader uses the opportunity to jump in and help you capture them.")
         print("The city guard manage to overpower the soldiers in the lobby as well and the situation comes to a close.")
-        winsound.PlaySound("town2", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town2", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You are given 2000 gold for your valiant efforts to stop the soldiers.")
         gold += 2000
         print("With the winter season finally over, spring suddenly overtakes the city.")
@@ -2752,7 +2752,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
             gold += 20000
             lv += 20
         town("2")
-        winsound.PlaySound("town2", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/town2", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You are sent to investigatea a swamp for no particular reason.")
         begin = input("Head to the swamp? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP)
@@ -2814,7 +2814,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                         fails += 1
         print("You eventually find a hut in the middle of the swamp and you head towards.")
         print("Suddenly, you feel an imposing presence behind you.")
-        winsound.PlaySound("FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
         begin = input("Turn around? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP)
         wins = 0
@@ -2881,7 +2881,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
         print("You obtain 4000 gold.")
         print("Your next assignment is to hunt down anti-vaxers and stop them from spreading fake news about vaccines.")
         print("You head to the anti-vax headquarters and start to 'silence' them.")
-        winsound.PlaySound("explore", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/explore", winsound.SND_ASYNC + winsound.SND_LOOP)
         begin = input("Enter the base? ")
         winsound.PlaySound(None, winsound.SND_ASYNC + winsound.SND_LOOP)
         wins = 0
@@ -2912,7 +2912,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                             wins -= wins
                             fails += 1
         print("You find the anti-vax leader.")
-        winsound.PlaySound("truth", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/truth", winsound.SND_ASYNC + winsound.SND_LOOP)
         begin = input("Engage them in combat? ")
         fails = 0
         wins = 0
@@ -3015,7 +3015,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
             mag = True
             town("")
         print("You arrive in the mountains and head to the shrine mentioned in the briefing.")
-        winsound.PlaySound("LIGHT", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/LIGHT", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("There, you meet an old man, who tells you he has been expecting you.")
         print("He asks you if you would be willing to spar with him and you accept.")
         print("The match starts and you try striking him several times, in the head, stomach, and legs but each time he swiftly dodges and guards your attacks.")
@@ -3096,7 +3096,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                 fails += 1
                 print("Having been knocked down, you get back up again, not ready to give up just yet.")
         print("You get off the ground and see Shaggy approaching you.")
-        winsound.PlaySound("FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/FREEDOM", winsound.SND_ASYNC + winsound.SND_LOOP)
         begin = input("Are you ready for the final battle? ")
         wins = 0
         fails = 0
@@ -3125,7 +3125,7 @@ while True: #repitition loop to make sure the game doesn't break if the user doe
                 fails += 1
                 if power > 6103506225000000000: #Reseting the player's power level to an acceptable number so they can't simply power up, die, then insta-kill him next battle
                     power = 6103506225000000000
-        winsound.PlaySound("truth", winsound.SND_ASYNC + winsound.SND_LOOP)
+        winsound.PlaySound("Music/truth", winsound.SND_ASYNC + winsound.SND_LOOP)
         print("You dealt the killing blow to Shaggy, putting him down for good.")
         print("Having saved the world from Shaggy's wraith, you head back to town and bask in the glory of your victory.")
         print("The guild recognizes you as a hero and you earn your place among legends in Verona.")
