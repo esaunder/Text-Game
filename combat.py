@@ -1659,6 +1659,7 @@ def shop(): #Creating the shop function
             break
 
 #test
+#test2
 def town(a): #creating a function for the town in the game
     global lv, gold, xp, lvup, hpot, hpots, spot, spots, mpot, mpots #obtaining important variables needed for the function from the global pool
     while True: #Looping endlessly until the player chooses to continue the story
