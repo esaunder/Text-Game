@@ -3,7 +3,7 @@ A text-based turn-based game written in Python. It features a rock-paper-scissor
 
 By [Ethan Saunders](https://github.com/esaundere) 
 Course: Computer Science ICS20 (Grade 10 course)  
-Date: December 11th, 2018  
+Date: June 13th, 2019  
 Grade: 100%
 
 ![Text Game Demo](Assets/demos.gif)  
