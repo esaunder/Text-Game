@@ -1,12 +1,12 @@
 # Text-Game
-A text-based turn-based game written in Python. It features a rock-paper-scissors combat (with basic attacks) and other additional features to add more uniqueness to this system. ([Demo Video](https://youtu.be/iMbGX3d2MWY))
+A text-based turn-based game written in Python. It features a rock-paper-scissors combat (with basic attacks) and other additional features to add more uniqueness to this system. ([Demo Video](https://youtu.be/m5MgikbB2TY))
 
 By [Ethan Saunders](https://github.com/esaundere) 
 Course: Computer Science ICS20 (Grade 10 course)  
 Date: December 11th, 2018  
 Grade: 100%
 
-!(assets/TenaciousTanksGif.gif)  
+![Text Game Demo](Assets/demos.gif)  
 
 ## Table of Contents
 [1. Intro](#Intro)  
@@ -25,8 +25,8 @@ This game was inspired by my enjoyment of turn-based video games and this proces
 
 Check out the demo video for this project [here](https://youtu.be/iMbGX3d2MWY)!
 
-![Tenacious Tanks Main](assets/TenaciousTanksMain.png)  
-![Tenacious Tanks Game](assets/TenaciousTanksGame.png)
+![Text Game Magic](Assets/battle2.png)  
+![Text Game LBM](Assets/battle.png)
 
 ## Environment Setup
 
