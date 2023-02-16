@@ -15,7 +15,7 @@ directory = os.path.dirname(__file__);
 def battle(HP, h, l, s, g, d, spa, spd, edam, edef, MP, mpd, m, mtype, fire, ice, earth, lightning, music, art): #Creating the battle func with all the variables needed listed
    
     if music == "B1":   #coding the music for the battle sequence, calling on the str given in brackets
-        winsound.PlaySound(sys.path[0] + "/Music/c", winsound.SND_ASYNC + winsound.SND_LOOP) 
+        winsound.PlaySound(directory + "/Music/c", winsound.SND_ASYNC + winsound.SND_LOOP) 
     elif music == "B2":
         winsound.PlaySound(directory + "/Music/GBB3", winsound.SND_ASYNC + winsound.SND_LOOP)
     elif music == "B3":
